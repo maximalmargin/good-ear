@@ -9,8 +9,8 @@ const currentPath = Astro.url.pathname;
     <nav>
       <a href="/shop" class:list={{ active: currentPath === '/shop' }}>Shop</a>
       <a href="/about" class:list={{ active: currentPath === '/about' }}>About</a>
-      <button class="snipcart-checkout cart-btn">
-        Cart (<span class="snipcart-items-count">0</span>)
+      <button class="snipcart-checkout cart-btn" aria-label="View shopping cart">
+        Cart (<span class="snipcart-items-count" aria-live="polite" aria-atomic="true">0</span>)
       </button>
     </nav>
   </div>
