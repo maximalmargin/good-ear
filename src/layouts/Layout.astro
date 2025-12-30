@@ -14,6 +14,13 @@ const {
 } = Astro.props;
 
 const fullTitle = title === 'Good Ear' ? title : `${title} | Good Ear`;
+
+// Get Snipcart API key from environment variables
+const snipcartApiKey = import.meta.env.PUBLIC_SNIPCART_API_KEY;
+
+if (!snipcartApiKey) {
+  console.warn('Warning: PUBLIC_SNIPCART_API_KEY is not set. Shopping cart will not function properly.');
+}
 ---
 
 <!DOCTYPE html>
@@ -42,8 +49,30 @@ const fullTitle = title === 'Good Ear' ? title : `${title} | Good Ear`;
     <Footer />
 
     <!-- Snipcart -->
-    <div hidden id="snipcart" data-api-key="YOUR_SNIPCART_PUBLIC_API_KEY"></div>
+    <div hidden id="snipcart" data-api-key={snipcartApiKey} data-config-modal-style="side"></div>
     <script src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js" async></script>
+
+    <!-- Snipcart error handling -->
+    <script is:inline>
+      window.addEventListener('snipcart.ready', () => {
+        console.log('Snipcart loaded successfully');
+      });
+
+      // Check if Snipcart failed to load after timeout
+      setTimeout(() => {
+        if (typeof window.Snipcart === 'undefined') {
+          console.error('Snipcart failed to load. Please check your API key and network connection.');
+          // Display user-friendly error
+          const cartButtons = document.querySelectorAll('.snipcart-checkout, .snipcart-add-item');
+          cartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+              e.preventDefault();
+              alert('Shopping cart is currently unavailable. Please try again later.');
+            });
+          });
+        }
+      }, 5000);
+    </script>
   </body>
 </html>
 

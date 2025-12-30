@@ -133,6 +133,7 @@ const productUrl = `${Astro.site}records/${slug}`;
               data-item-url={productUrl}
               data-item-image={image}
               data-item-description={`${condition} condition, ${year} ${label} pressing`}
+              aria-label={`Add ${artist} - ${title} to cart for $${price}`}
             >
               Add to Cart
             </button>

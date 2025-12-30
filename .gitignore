@@ -6,7 +6,9 @@ dist/
 
 # Environment
 .env
-.env.*
+.env.local
+.env.*.local
+!.env.example
 
 # IDE
 .vscode/
@@ -18,3 +20,8 @@ Thumbs.db
 
 # Astro
 .astro/
+
+# Tests
+test-results/
+playwright-report/
+coverage/
