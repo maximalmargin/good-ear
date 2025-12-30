@@ -1,0 +1,26 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  artist: string;
+  price: number;
+  image: string;
+  condition?: string;
+}
+
+const { slug, title, artist, price, image, condition } = Astro.props;
+---
+
+<a href={`/records/${slug}`} class="product-card">
+  <img src={image} alt={`${artist} - ${title}`} loading="lazy" />
+  <h3>{title}</h3>
+  <p class="artist">{artist}</p>
+  <p class="price">${price}</p>
+  {condition && <p class="condition text-xs text-gray">{condition}</p>}
+</a>
+
+<style>
+  .condition {
+    margin-top: var(--space-xs);
+  }
+</style>

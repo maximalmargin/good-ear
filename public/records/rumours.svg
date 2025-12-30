@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#f5f5f0"/>
+  <text x="200" y="180" text-anchor="middle" fill="#1a1a1a" font-family="Georgia, serif" font-size="24">Rumours</text>
+  <text x="200" y="220" text-anchor="middle" fill="#767676" font-family="Georgia, serif" font-size="16">Fleetwood Mac</text>
+  <circle cx="200" cy="320" r="40" fill="none" stroke="#c45d3a" stroke-width="2"/>
+  <circle cx="200" cy="320" r="15" fill="#c45d3a"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#c45d3a"/>
+  <text x="200" y="180" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-size="22">Remain in Light</text>
+  <text x="200" y="220" text-anchor="middle" fill="#ffd7cc" font-family="Georgia, serif" font-size="16">Talking Heads</text>
+  <circle cx="200" cy="320" r="40" fill="none" stroke="#fff" stroke-width="2"/>
+  <circle cx="200" cy="320" r="15" fill="#fff"/>
+</svg>

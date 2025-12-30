@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#1a365d"/>
+  <text x="200" y="180" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-size="24">Kind of Blue</text>
+  <text x="200" y="220" text-anchor="middle" fill="#a0aec0" font-family="Georgia, serif" font-size="16">Miles Davis</text>
+  <circle cx="200" cy="320" r="40" fill="none" stroke="#4a5568" stroke-width="2"/>
+  <circle cx="200" cy="320" r="15" fill="#4a5568"/>
+</svg>

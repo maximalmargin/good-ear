@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+
+// All records (will be replaced with content collection)
+const records = [
+  {
+    slug: 'miles-davis-kind-of-blue',
+    title: 'Kind of Blue',
+    artist: 'Miles Davis',
+    price: 35,
+    image: '/records/kind-of-blue.svg',
+    condition: 'VG+',
+    genre: 'Jazz'
+  },
+  {
+    slug: 'fleetwood-mac-rumours',
+    title: 'Rumours',
+    artist: 'Fleetwood Mac',
+    price: 28,
+    image: '/records/rumours.svg',
+    condition: 'VG+',
+    genre: 'Rock'
+  },
+  {
+    slug: 'talking-heads-remain-in-light',
+    title: 'Remain in Light',
+    artist: 'Talking Heads',
+    price: 32,
+    image: '/records/remain-in-light.svg',
+    condition: 'NM',
+    genre: 'Rock'
+  },
+  {
+    slug: 'stevie-wonder-innervisions',
+    title: 'Innervisions',
+    artist: 'Stevie Wonder',
+    price: 25,
+    image: '/records/innervisions.svg',
+    condition: 'VG',
+    genre: 'Soul'
+  },
+  {
+    slug: 'john-coltrane-a-love-supreme',
+    title: 'A Love Supreme',
+    artist: 'John Coltrane',
+    price: 45,
+    image: '/records/a-love-supreme.svg',
+    condition: 'VG+',
+    genre: 'Jazz'
+  },
+  {
+    slug: 'joni-mitchell-blue',
+    title: 'Blue',
+    artist: 'Joni Mitchell',
+    price: 30,
+    image: '/records/blue.svg',
+    condition: 'VG+',
+    genre: 'Folk'
+  }
+];
+---
+
+<Layout title="Shop" description="Browse our curated collection of vinyl records.">
+  <section class="shop-hero">
+    <div class="container">
+      <h1>The Collection</h1>
+      <p class="text-gray">Each record hand-selected and graded.</p>
+    </div>
+  </section>
+
+  <section class="shop-grid">
+    <div class="container">
+      <div class="filters">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Jazz</button>
+        <button class="filter-btn">Rock</button>
+        <button class="filter-btn">Soul</button>
+        <button class="filter-btn">Folk</button>
+      </div>
+
+      <div class="grid grid-4 mt-lg">
+        {records.map((record) => (
+          <ProductCard {...record} />
+        ))}
+      </div>
+
+      <p class="inventory-note text-sm text-gray mt-xl">
+        {records.length} records in stock. New finds added weekly.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .shop-hero {
+    padding: var(--space-xl) 0;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  .shop-hero h1 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .shop-grid {
+    padding: var(--space-xl) 0;
+  }
+
+  .filters {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    font-family: inherit;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: var(--space-xs) var(--space-md);
+    background: none;
+    border: 1px solid var(--color-gray-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    border-color: var(--color-black);
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+
+  .inventory-note {
+    text-align: center;
+  }
+</style>
+
+<script>
+  // Simple client-side filtering
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // Add actual filtering logic here when using content collections
+    });
+  });
+</script>

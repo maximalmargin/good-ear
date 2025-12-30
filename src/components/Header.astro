@@ -1,0 +1,71 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo">Good Ear</a>
+
+    <nav>
+      <a href="/shop" class:list={{ active: currentPath === '/shop' }}>Shop</a>
+      <a href="/about" class:list={{ active: currentPath === '/about' }}>About</a>
+      <button class="snipcart-checkout cart-btn">
+        Cart (<span class="snipcart-items-count">0</span>)
+      </button>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-gray-light);
+    z-index: 100;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  nav a {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  nav a.active {
+    color: var(--color-accent);
+  }
+
+  .cart-btn {
+    font-family: inherit;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-black);
+  }
+
+  .cart-btn:hover {
+    color: var(--color-accent);
+  }
+</style>

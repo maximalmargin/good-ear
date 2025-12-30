@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#1a1a1a"/>
+  <text x="200" y="170" text-anchor="middle" fill="#f6e05e" font-family="Georgia, serif" font-size="20">A Love Supreme</text>
+  <text x="200" y="210" text-anchor="middle" fill="#a0aec0" font-family="Georgia, serif" font-size="16">John Coltrane</text>
+  <circle cx="200" cy="320" r="40" fill="none" stroke="#f6e05e" stroke-width="2"/>
+  <circle cx="200" cy="320" r="15" fill="#f6e05e"/>
+</svg>

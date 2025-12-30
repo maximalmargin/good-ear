@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About" description="The story behind Good Ear and our standards for curation.">
+  <article class="about-page">
+    <div class="container">
+      <header class="about-header">
+        <p class="text-xs text-gray">About</p>
+        <h1>Curation is the product.</h1>
+      </header>
+
+      <div class="about-content">
+        <section class="about-intro">
+          <p class="lead">
+            Good Ear exists because most record shops are overwhelming,
+            and most online sellers don't care what they're selling.
+          </p>
+          <p>
+            I started this after years of digging through bins, estate sales,
+            and thrift stores. The good stuff is out there—it just takes
+            time and taste to find it. That's the service: I do the work
+            so you get the rewards.
+          </p>
+        </section>
+
+        <section class="standards mt-xl">
+          <h2>The Standards</h2>
+
+          <div class="standard-list mt-lg">
+            <div class="standard">
+              <h3>Honest Grading</h3>
+              <p>
+                Every record is graded conservatively using Goldmine standards.
+                VG+ means VG+, not "VG+ but actually VG." What you see is what you get.
+              </p>
+            </div>
+
+            <div class="standard">
+              <h3>Cleaned & Inspected</h3>
+              <p>
+                Each record is cleaned before listing and inspected under good light.
+                No mystery pressings, no hidden damage.
+              </p>
+            </div>
+
+            <div class="standard">
+              <h3>Curated Selection</h3>
+              <p>
+                Not everything makes the cut. If it's here, it's because it's
+                genuinely worth owning—musically and as a physical object.
+              </p>
+            </div>
+
+            <div class="standard">
+              <h3>Fair Prices</h3>
+              <p>
+                Priced to move, not to sit. I check Discogs, but I'm not trying
+                to squeeze every dollar. Good deals for good records.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="grading mt-xl">
+          <h2>Grading Guide</h2>
+          <div class="grade-list mt-lg">
+            <div class="grade">
+              <span class="grade-label">NM</span>
+              <span class="grade-name">Near Mint</span>
+              <p>Nearly perfect. May have been played a few times with care.</p>
+            </div>
+            <div class="grade">
+              <span class="grade-label">VG+</span>
+              <span class="grade-name">Very Good Plus</span>
+              <p>Light wear, plays great. Surface noise minimal to none.</p>
+            </div>
+            <div class="grade">
+              <span class="grade-label">VG</span>
+              <span class="grade-name">Very Good</span>
+              <p>Visible wear, some surface noise, but no skips. Still enjoyable.</p>
+            </div>
+            <div class="grade">
+              <span class="grade-label">G+</span>
+              <span class="grade-name">Good Plus</span>
+              <p>Well-loved. Plays through but with consistent noise. Priced accordingly.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact mt-xl">
+          <h2>Get in Touch</h2>
+          <p class="mt-md">
+            Questions about a record? Want to sell your collection?
+            Just want to talk music?
+          </p>
+          <a href="mailto:hello@goodear.shop" class="btn btn-outline mt-md">
+            Email Me
+          </a>
+        </section>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .about-header {
+    padding: var(--space-xl) 0;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  .about-header h1 {
+    margin-top: var(--space-sm);
+  }
+
+  .about-content {
+    max-width: 720px;
+    padding: var(--space-xl) 0;
+  }
+
+  .lead {
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    line-height: 1.5;
+    margin-bottom: var(--space-lg);
+  }
+
+  .about-intro p {
+    color: var(--color-gray);
+    margin-bottom: var(--space-md);
+  }
+
+  .standard-list {
+    display: grid;
+    gap: var(--space-lg);
+  }
+
+  .standard h3 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .standard p {
+    color: var(--color-gray);
+  }
+
+  .grade-list {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .grade {
+    display: grid;
+    grid-template-columns: 60px 140px 1fr;
+    gap: var(--space-md);
+    align-items: baseline;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  @media (max-width: 640px) {
+    .grade {
+      grid-template-columns: 1fr;
+      gap: var(--space-xs);
+    }
+  }
+
+  .grade-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .grade-name {
+    color: var(--color-gray);
+    font-size: 0.875rem;
+  }
+
+  .grade p {
+    color: var(--color-gray);
+    font-size: 0.875rem;
+  }
+
+  .contact {
+    padding: var(--space-xl);
+    background: var(--color-gray-light);
+  }
+</style>
